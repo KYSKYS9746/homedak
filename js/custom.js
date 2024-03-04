@@ -18,9 +18,6 @@ $(function () {
     })
 
 
-    $('.main_visual .mopen').on('click', function () {
-        $(this).toggleClass('on');
-    });
 
 
     $('.main_visual .main_visual_slide').on('init afterChange', function () {
@@ -50,8 +47,18 @@ $(function () {
     $('.main_tema  .tab_content li .tab_slide ').slick({
         slidesToShow: 3,
         autoplay: true,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 1500,
         arrows: false,
+
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    pauseOnHover: false
+                }
+            }
+        ]
     });
 
 
@@ -69,7 +76,22 @@ $(function () {
 
     });
 
+    $('.main_content .tab_content li').slick({
+        slidesToShow: 5,
 
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    autoplay: true,
+                    autoplaySpeed: 1500,
+                    arrows: false,
+                    pauseOnHover: false
+                }
+            }
+        ]
+    });
 
 })
 
